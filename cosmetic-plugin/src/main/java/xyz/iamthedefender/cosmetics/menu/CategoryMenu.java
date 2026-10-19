@@ -300,23 +300,27 @@ public class CategoryMenu extends ChestSystemGui {
             return;
         }
 
-        Location playerLocation;
-        Location previewLocation;
+        Location fallback = player.getLocation().clone();
+        Location playerLocation = null;
+        Location previewLocation = null;
 
         if (StartupUtils.isPreviewConfigured()) {
             playerLocation = StartupUtils.getPlayerLocation();
             previewLocation = StartupUtils.getCosmeticLocation();
-        } else {
-            // Preview location not configured: use the player's current location so
-            // previews (sounds, messages) still work without extra setup.
-            playerLocation = player.getLocation().clone();
-            previewLocation = player.getLocation().clone();
         }
+
+        // Preview location not configured (or only partially configured): use the
+        // player's current location so previews (sounds, messages) still work.
+        if (playerLocation == null) playerLocation = fallback.clone();
+        if (previewLocation == null) previewLocation = fallback.clone();
+
+        final Location finalPlayerLocation = playerLocation;
+        final Location finalPreviewLocation = previewLocation;
 
         AtomicBoolean found = new AtomicBoolean(false);
         CosmeticsPlugin.getInstance().getPreviewList().stream().filter(preview -> preview.getType() == type).findAny().ifPresent(cosmeticPreview -> {
             try {
-                cosmeticPreview.showPreview(player, cosmetics, previewLocation, playerLocation);
+                cosmeticPreview.showPreview(player, cosmetics, finalPreviewLocation, finalPlayerLocation);
                 found.set(true);
             } catch (Exception e) {
                 DebugUtil.addMessage("Preview failed for " + id + ": " + e.getMessage());
