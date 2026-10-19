@@ -322,8 +322,8 @@ public class CategoryMenu extends ChestSystemGui {
             try {
                 cosmeticPreview.showPreview(player, cosmetics, finalPreviewLocation, finalPlayerLocation);
                 found.set(true);
-            } catch (Exception e) {
-                DebugUtil.addMessage("Preview failed for " + id + ": " + e.getMessage());
+            } catch (Throwable e) {
+                CosmeticsPlugin.getInstance().getLogger().warning("Preview failed for " + id + ": " + e);
             }
         });
 

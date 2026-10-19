@@ -115,7 +115,6 @@ public class ShopKeeperSkinsUtils {
         NPC npc = registry.createNPC(EntityType.PLAYER, "");
         npc.setName("&r");
         npc.getOrAddTrait(SkinTrait.class).setSkinPersistent(UUID.randomUUID().toString(), sign, value);
-        npc.getOrAddTrait(SkinTrait.class).setTexture(value, sign);
         npc.getOrAddTrait(HologramTrait.class).clear();
 
         npc.getOrAddTrait(PlayerFilter.class).setAllowlist();

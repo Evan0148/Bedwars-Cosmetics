@@ -28,6 +28,7 @@ import xyz.iamthedefender.cosmetics.util.CosmeticsUtil;
 import xyz.iamthedefender.cosmetics.util.MathUtil;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class ShopKeeperHandlerSBW implements Listener {
@@ -73,7 +74,7 @@ public class ShopKeeperHandlerSBW implements Listener {
                         NPC npc = CitizensAPI.getNPCRegistry().getNPC(livingEntity);
 
                         npc.getOrAddTrait(SkinTrait.class)
-                                .setTexture(skinValue, skinSign);
+                                .setSkinPersistent(UUID.randomUUID().toString(), skinSign, skinValue);
                     }
                 }
             }

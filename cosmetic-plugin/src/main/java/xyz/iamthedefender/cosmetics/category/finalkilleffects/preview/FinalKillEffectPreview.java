@@ -102,11 +102,9 @@ public class FinalKillEffectPreview extends CosmeticPreview {
             String victimNPCSign = victimNPCValues[1];
 
             victimNPC.getOrAddTrait(SkinTrait.class).setSkinPersistent(UUID.randomUUID().toString(), victimNPCSign, victimNPCValue);
-            victimNPC.getOrAddTrait(SkinTrait.class).setTexture(victimNPCValue, victimNPCSign);
         }
 
         derperinoNPC.getOrAddTrait(SkinTrait.class).setSkinPersistent(UUID.randomUUID().toString(), derperinoNPCSign, derperinoNPCValue);
-        derperinoNPC.getOrAddTrait(SkinTrait.class).setTexture(derperinoNPCValue, derperinoNPCSign);
 
         victimNPC.getOrAddTrait(PlayerFilter.class).setAllowlist();
         victimNPC.getOrAddTrait(PlayerFilter.class).addPlayer(player.getUniqueId());
