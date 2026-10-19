@@ -4,6 +4,23 @@ kill-message:
     price: 0
     rarity: "NONE"
 
+
+  thunder:
+    price: 10000
+    item: "LIGHTNING_ROD:0"
+    PvP-Kill:
+      - '{victim} &7被 {killer} 召唤的天雷劈成了灰。'
+      - '{victim} &7被 {killer} 用雷神之锤砸飞了。'
+      - '{victim} &7被 {killer} 引来的闪电击中。'
+      - '{victim} &7在 {killer} 的雷暴中跳了最后一支舞。'
+    Void-Kill:
+      - '{victim} &7被 {killer} 一道闪电劈出了边缘。'
+    Explosion-Kill:
+      - '{victim} &7被 {killer} 的落雷炸上了天。'
+    Shoot-Kill:
+      - '{victim} &7被 {killer} 的闪电箭射落了。'
+    rarity: "RARE"
+
   fire:
     price: 5000
     item: "BLAZE_POWDER:0"

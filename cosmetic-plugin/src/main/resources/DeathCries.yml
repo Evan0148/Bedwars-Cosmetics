@@ -7,6 +7,22 @@ death-cry:
     volume: 0
     rarity: "NONE"
 
+  warden:
+    sound: "ENTITY_WARDEN_SONIC_BOOM"
+    item: "SCULK_SHRIEKER:0"
+    volume: 1
+    pitch: 1
+    price: 10000
+    rarity: "RARE"
+
+  thunder:
+    sound: "ENTITY_LIGHTNING_BOLT_THUNDER"
+    item: "LIGHTNING_ROD:0"
+    volume: 1
+    pitch: 1
+    price: 5000
+    rarity: "COMMON"
+
   bazinga:
     sound: "ENTITY_BLAZE_DEATH"
     item: "player_head:0:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2I4N2QyMjUyY2FjMWFhMTVkZjMyNTk5OGI4ZWM4MmVmOTEwOWI2YzU2NzYxMGFmYWMwZWNkYTUxM2Y2MSJ9fX0="

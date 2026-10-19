@@ -431,6 +431,7 @@ public class StartupUtils
             new TwerkApocalypseDance().register();
         }
         new WitherRiderDance().register();
+        new LightningStormDance().register();
         new YeeHawDance().register();
         new GuardiansDance().register();
 
@@ -476,9 +477,17 @@ public class StartupUtils
         libraryManager.loadLibrary(slf4j);
     }
 
+    /**
+     * Whether the admin has configured the cosmetic preview location.
+     * When not configured, previews fall back to the player's current location.
+     */
+    public static boolean isPreviewConfigured() {
+        String worldName = CosmeticsPlugin.getInstance().getConfig().getString("cosmetic-preview.cosmetic-location.world");
+        return worldName != null && !worldName.isEmpty() && Bukkit.getWorld(worldName) != null;
+    }
+
     public static Location getCosmeticLocation() {
-        World world = Bukkit.getWorld(CosmeticsPlugin.getInstance().getConfig().getString("cosmetic-preview.cosmetic-location.world"));
-        double x = CosmeticsPlugin.getInstance().getConfig().getDouble("cosmetic-preview.cosmetic-location.x");
+        World world = Bukkit.getWorld(CosmeticsPlugin.getInstance().getConfig().getString("cosmetic-preview.cosmetic-location.world"));        double x = CosmeticsPlugin.getInstance().getConfig().getDouble("cosmetic-preview.cosmetic-location.x");
         double y = CosmeticsPlugin.getInstance().getConfig().getDouble("cosmetic-preview.cosmetic-location.y");
         double z = CosmeticsPlugin.getInstance().getConfig().getDouble("cosmetic-preview.cosmetic-location.z");
         float yaw = (float) CosmeticsPlugin.getInstance().getConfig().getDouble("cosmetic-preview.cosmetic-location.yaw");

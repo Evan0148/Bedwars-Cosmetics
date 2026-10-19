@@ -16,6 +16,7 @@ public class KillMessageItems {
     private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
     static {
         NAMES.put("default", "默认");
+        NAMES.put("thunder", "雷霆套装");
         NAMES.put("fire", "烈火焚身");
         NAMES.put("western", "西部牛仔");
         NAMES.put("honourable", "绅士");

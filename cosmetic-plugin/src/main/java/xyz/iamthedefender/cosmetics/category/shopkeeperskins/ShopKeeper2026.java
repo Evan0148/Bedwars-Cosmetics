@@ -33,6 +33,8 @@ public class ShopKeeper2026 implements Listener {
 
         Arena arena = event.getArena();
         arenas.put(arena.getName(), true);
+        // Victory dances check the world name in the shared arenas map
+        ShopKeeperHandler1058.arenas.put(arena.getWorldName(), true);
         DebugUtil.addMessage("Executing ShopKeeper Skins for arena " + arena.getName());
 
         // Copy of the teams' data — capture before a later runnable runs.
@@ -91,5 +93,6 @@ public class ShopKeeper2026 implements Listener {
         if (!isShopkeepersEnabled) return;
 
         Run.delayed(() -> ShopKeeper2026.arenas.remove(e.getArena().getName()), 300L);
+        Run.delayed(() -> ShopKeeperHandler1058.arenas.remove(e.getArena().getWorldName()), 300L);
     }
 }

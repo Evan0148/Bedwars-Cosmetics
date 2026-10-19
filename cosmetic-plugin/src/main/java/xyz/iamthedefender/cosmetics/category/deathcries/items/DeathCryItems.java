@@ -16,6 +16,8 @@ public class DeathCryItems {
     private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
     static {
         NAMES.put("none", "无");
+        NAMES.put("warden", "监守者音波");
+        NAMES.put("thunder", "雷霆之声");
         NAMES.put("bazinga", "Bazinga!");
         NAMES.put("enderman", "末影人");
         NAMES.put("pig", "猪哼哼");
