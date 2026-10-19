@@ -44,13 +44,29 @@ public enum CosmeticsType {
     }
 
     public static CosmeticsType fromName(String name) {
-        String normalized = name.replace("-", "").replace("_", "");
+        if (name == null) return null;
+
+        String normalized = normalizeKey(name);
+
         for (CosmeticsType type : values()) {
-            if (type.name().replace("-", "").replace("_", "").equalsIgnoreCase(normalized)) {
+            String enumKey = normalizeKey(type.name());
+            if (enumKey.equals(normalized) || (enumKey + "s").equals(normalized)) {
+                return type;
+            }
+
+            // Some menu keys use different words than the enum name
+            // (e.g. "Bed-Destroys" vs BedBreakEffects), so also match the section key.
+            String sectionKey = normalizeKey(type.getSectionKey());
+            if (sectionKey.equals(normalized) || (sectionKey + "s").equals(normalized)) {
                 return type;
             }
         }
         return null;
+    }
+
+    private static String normalizeKey(String value) {
+        if (value == null) return "";
+        return value.replace("-", "").replace("_", "").replace(" ", "");
     }
 
 }
