@@ -21,8 +21,34 @@
     </modules>
     <properties>
         <java.version>11</java.version>
+        <lombok.version>1.18.48</lombok.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <!--
+      JDK 23+ no longer enables implicit annotation processing, so Lombok
+      must be passed explicitly through annotationProcessorPaths here.
+    -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <proc>full</proc>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
     <repositories>
         <repository>
@@ -71,7 +97,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
+            <version>1.18.48</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -95,7 +121,8 @@
         <dependency>
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
-            <version>11.3.0</version>
+            <!-- 13.x supports the new Mojang authlib GameProfile structure used by 1.21.9+ servers -->
+            <version>13.6.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

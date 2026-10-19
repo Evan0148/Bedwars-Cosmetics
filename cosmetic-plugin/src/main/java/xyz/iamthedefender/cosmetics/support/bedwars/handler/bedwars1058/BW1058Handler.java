@@ -32,7 +32,9 @@ public class BW1058Handler implements IHandler {
 
     @Override
     public void register() {
-        StartupUtils.registerListeners(new ShopKeeperHandler1058());
+        if (StartupUtils.citizensEnabled) {
+            StartupUtils.registerListeners(new ShopKeeperHandler1058());
+        }
         StartupUtils.registerListeners(new GlyphHandler1058());
         StartupUtils.registerListeners(new KillMessageHandler1058());
         StartupUtils.registerListeners(new VictoryDanceHandler1058());

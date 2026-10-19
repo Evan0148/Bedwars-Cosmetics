@@ -79,6 +79,13 @@ public class StartupUtils
             Bukkit.getPluginManager().getPlugin("BWProxy2023") != null;
 
     /**
+     * Whether Citizens is present. Some cosmetics (ShopKeeperSkins, the
+     * "Twerk Apocalypse" victory dance and the FinalKillEffect preview) rely
+     * on NPCs and are skipped when Citizens is not installed.
+     */
+    public static boolean citizensEnabled;
+
+    /**
      Register events and handler
       @author IamTheDefender
      */
@@ -255,7 +262,7 @@ public class StartupUtils
             fos.close();
             rbc.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Bukkit.getLogger().warning("Could not download '" + filePath + "' from " + url.getHost() + " (" + e.getMessage() + ")");
         }
     }
 
@@ -303,6 +310,10 @@ public class StartupUtils
             new CosmeticsPlaceholders().register();
             CosmeticsPlugin.setPlaceholderAPI(true);
         }
+        citizensEnabled = isPluginEnabled("Citizens");
+        if (!citizensEnabled){
+            log.warning("Citizens was not found! ShopKeeperSkin cosmetics, the 'Twerk Apocalypse' dance and the FinalKillEffect preview will be disabled.");
+        }
         return true;
     }
 
@@ -313,6 +324,35 @@ public class StartupUtils
      */
     public static boolean isPluginEnabled(String plugin){
         return Bukkit.getPluginManager().isPluginEnabled(plugin);
+    }
+
+    /**
+     * Detects the "BedWars2026" fork (me.horiciastko.bedwars.BedWars) by probing
+     * for its main class - other plugins may share the "BedWars" plugin name.
+     * @return true if the fork's classes are reachable.
+     */
+    public static boolean isBedWars2026Fork(){
+        try {
+            Class.forName("me.horiciastko.bedwars.BedWars");
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
+
+    /**
+     * ScreamingBedWars publishes its plugin under the name "BedWars", but other
+     * plugins may use the same name without actually being ScreamingBedWars.
+     * This verifies the ScreamingBedWars API classes are actually reachable.
+     * @return true if ScreamingBedWars (or a compatible fork) is installed.
+     */
+    public static boolean isScreamingBedWars(){
+        try {
+            Class.forName("org.screamingsandals.bedwars.api.BedwarsAPI");
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
     }
 
 
@@ -359,7 +399,9 @@ public class StartupUtils
             Bukkit.getLogger().warning("Can't find worldedit! IslandTopper will not load!");
         }
         KillMessageItems.registerConfigItems();
-        new ShopKeeperItems().registerItems();
+        if (citizensEnabled) {
+            new ShopKeeperItems().registerItems();
+        }
         SprayItems.registerConfigItems();
         new ProjectileTrailItems().registerConfigItems();
 
@@ -386,7 +428,9 @@ public class StartupUtils
         new RainbowDollyDance().register();
         new RainingPigsDance().register();
         new ToyStickDance().register();
-        new TwerkApocalypseDance().register();
+        if (citizensEnabled) {
+            new TwerkApocalypseDance().register();
+        }
         new WitherRiderDance().register();
         new YeeHawDance().register();
         new GuardiansDance().register();
@@ -408,7 +452,9 @@ public class StartupUtils
         new ShopKeeperPreview();
         new GlyphPreview();
         new KillMessagePreview();
-        new FinalKillEffectPreview();
+        if (citizensEnabled) {
+            new FinalKillEffectPreview();
+        }
         // new IslandTopperPreview(); - temporarily disabled
         new DeathCryPreview();
         new SprayPreview();

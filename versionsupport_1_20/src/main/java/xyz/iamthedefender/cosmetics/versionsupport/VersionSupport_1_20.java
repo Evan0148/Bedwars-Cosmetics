@@ -71,6 +71,15 @@ public class VersionSupport_1_20 implements IVersionSupport {
         try {
             Particle.valueOf(name.toUpperCase());
         } catch (IllegalArgumentException e) {
+            // Older configs may use pre-1.20.5 particle names
+            String mapped = ParticleWrapper.mapLegacyParticleName(name);
+            if (mapped != null) {
+                try {
+                    Particle.valueOf(mapped);
+                    return true;
+                } catch (IllegalArgumentException ignored) {
+                }
+            }
             return false;
         }
 

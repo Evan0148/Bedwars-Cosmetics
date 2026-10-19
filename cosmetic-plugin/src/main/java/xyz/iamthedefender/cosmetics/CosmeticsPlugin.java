@@ -40,6 +40,7 @@ import xyz.iamthedefender.cosmetics.support.bedwars.handler.bedwars1058.BW1058Ha
 import xyz.iamthedefender.cosmetics.support.bedwars.handler.bedwars1058.BW1058ProxyHandler;
 import xyz.iamthedefender.cosmetics.support.bedwars.handler.bedwars2023.BW2023Handler;
 import xyz.iamthedefender.cosmetics.support.bedwars.handler.bedwars2023.BW2023ProxyHandler;
+import xyz.iamthedefender.cosmetics.support.bedwars.handler.bedwars2026.BedWars2026Handler;
 import xyz.iamthedefender.cosmetics.support.bedwars.handler.screamingBedwars.ScreamingBedWarsHandler;
 import xyz.iamthedefender.cosmetics.util.MainMenuUtils;
 import xyz.iamthedefender.cosmetics.util.Metrics;
@@ -206,16 +207,66 @@ public class CosmeticsPlugin extends JavaPlugin {
 
     private IHandler findHandler() {
 
-        if (StartupUtils.isPluginEnabled("BedWars")) {
+        if (StartupUtils.isScreamingBedWars()) {
             try {
                 return new ScreamingBedWarsHandler();
-            }catch (Throwable throwable) {
+            } catch (Throwable throwable) {
                 throwable.printStackTrace();
-                throw new RuntimeException("Failed to find a valid BedWars plugin, are you using a supported BedWars plugin?");
+                getLogger().severe("ScreamingBedWars was detected but its handler failed to initialize!");
             }
         }
 
-        return api.isProxy() ? (StartupUtils.isBw2023 ? new BW2023ProxyHandler() : new BW1058ProxyHandler()) : (StartupUtils.isBw2023 ? new BW2023Handler() : new BW1058Handler());
+        if (StartupUtils.isBedWars2026Fork()) {
+            try {
+                return new BedWars2026Handler();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                getLogger().severe("BedWars2026 fork was detected but its handler failed to initialize!");
+            }
+        }
+
+        RuntimeException failure = new RuntimeException(
+                "Failed to find a supported BedWars plugin! This addon only supports BedWars1058, BedWars2023 and ScreamingBedWars.");
+
+        if (api.isProxy()) {
+            if (StartupUtils.isBw2023) {
+                try {
+                    return new BW2023ProxyHandler();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    failure.addSuppressed(throwable);
+                }
+            }
+            try {
+                return new BW1058ProxyHandler();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                failure.addSuppressed(throwable);
+            }
+        } else {
+            if (StartupUtils.isBw2023) {
+                try {
+                    return new BW2023Handler();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    failure.addSuppressed(throwable);
+                }
+            }
+            try {
+                return new BW1058Handler();
+            } catch (Throwable throwable) {
+                if (StartupUtils.isPluginEnabled("BedWars1058")) {
+                    throwable.printStackTrace();
+                }
+                failure.addSuppressed(throwable);
+            }
+        }
+
+        getLogger().severe("Detected BedWars plugins -> BedWars1058: " + StartupUtils.isPluginEnabled("BedWars1058")
+                + ", BedWars2023: " + (StartupUtils.isBw2023 && StartupUtils.isPluginEnabled("BedWars2023"))
+                + ", ScreamingBedWars: " + StartupUtils.isScreamingBedWars()
+                + ", BedWars2026 fork: " + StartupUtils.isBedWars2026Fork());
+        throw failure;
     }
 
     @Override

@@ -30,6 +30,9 @@ $RECYCLE.BIN/
 *.ctxt
 .mtj.tmp/
 *.jar
+!.gitignore
+!cosmetic-plugin/lib/*.jar
+!cosmetic-plugin/lib/**/*.jar
 *.war
 *.nar
 *.ear

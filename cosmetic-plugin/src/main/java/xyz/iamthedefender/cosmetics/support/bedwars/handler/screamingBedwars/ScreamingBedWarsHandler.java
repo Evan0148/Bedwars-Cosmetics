@@ -41,17 +41,31 @@ public class ScreamingBedWarsHandler implements IHandler {
     public void register() {
         StartupUtils.registerListeners(new ProjectileHandler(CosmeticsPlugin.getInstance()));
 
-        StartupUtils.registerListeners(
-                new WoodSkinSBW(),
-                new VictoryDanceSBW(),
-                new SprayHandlerSBW(),
-                new ShopKeeperHandlerSBW(),
-                new KillMessagesSBW(),
-                new FinalKillHandlerSBW(),
-                new BedDestroySBW(),
-                new DeathCrySBW(),
-                new IslandTopperHandlerSBW()
-        );
+        if (StartupUtils.citizensEnabled) {
+            StartupUtils.registerListeners(
+                    new WoodSkinSBW(),
+                    new VictoryDanceSBW(),
+                    new SprayHandlerSBW(),
+                    new ShopKeeperHandlerSBW(),
+                    new KillMessagesSBW(),
+                    new FinalKillHandlerSBW(),
+                    new BedDestroySBW(),
+                    new DeathCrySBW(),
+                    new IslandTopperHandlerSBW()
+            );
+        } else {
+            StartupUtils.registerListeners(
+                    new WoodSkinSBW(),
+                    new VictoryDanceSBW(),
+                    new SprayHandlerSBW(),
+                    new KillMessagesSBW(),
+                    new FinalKillHandlerSBW(),
+                    new BedDestroySBW(),
+                    new DeathCrySBW(),
+                    new IslandTopperHandlerSBW()
+            );
+            Bukkit.getLogger().warning("Can't find Citizens! ShopKeeperSkins will not load!");
+        }
     }
 
     @Override

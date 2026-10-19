@@ -40,7 +40,9 @@ public class BW2023Handler implements IHandler {
         StartupUtils.registerListeners(new ProjectileHandler(plugin));
         StartupUtils.registerListeners(new WoodSkinHandler2023());
         StartupUtils.registerListeners(new VictoryDanceHandler2023());
-        StartupUtils.registerListeners(new ShopKeeperHandler2023());
+        if (StartupUtils.citizensEnabled) {
+            StartupUtils.registerListeners(new ShopKeeperHandler2023());
+        }
         StartupUtils.registerListeners(new KillMessageHandler2023());
         StartupUtils.registerListeners(new IslandTopperHandler2023());
         StartupUtils.registerListeners(new GlyphHandler2023());

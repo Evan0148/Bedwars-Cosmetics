@@ -99,7 +99,8 @@ public class CategoryMenu extends ChestSystemGui {
                     colorCode = "&c";
                 }
                 if (returnValue == -2 ){ // <- Selected
-                    stack.addUnsafeEnchantment(Enchantment.LUCK, 1);
+                    Enchantment glow = getCompatEnchantment();
+                    if (glow != null) stack.addUnsafeEnchantment(glow, 1);
                 }
 
                 item = new ClickableItem(new ItemBuilder(stack)
@@ -311,5 +312,21 @@ public class CategoryMenu extends ChestSystemGui {
         if (found.get()) return;
 
         onClick(player, type, price, id, false);
+    }
+
+    /**
+     * Resolves the "glow" enchantment across server versions.
+     * On 1.20.5+ the {@code LUCK} enchantment was renamed to {@code LUCK_OF_THE_SEA},
+     * so the field is resolved through reflection to work on both old and new servers.
+     */
+    private static Enchantment getCompatEnchantment() {
+        for (String name : new String[]{"LUCK_OF_THE_SEA", "LUCK"}) {
+            try {
+                Object enchantment = Enchantment.class.getField(name).get(null);
+                return (Enchantment) enchantment;
+            } catch (NoSuchFieldException | IllegalAccessException ignored) {
+            }
+        }
+        return null;
     }
 }

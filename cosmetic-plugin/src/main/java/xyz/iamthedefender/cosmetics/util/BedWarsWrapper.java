@@ -17,6 +17,43 @@ import java.util.stream.Collectors;
 
 public class BedWarsWrapper {
 
+    public static ITeamHandler wrap(me.horiciastko.bedwars.models.Team team) {
+        return new ITeamHandler() {
+            @Override
+            public org.bukkit.Location getBed() {
+                return team.getBedLocation();
+            }
+
+            @Override
+            public List<Player> getPlayers() {
+                return team.getMembers();
+            }
+
+            @Override
+            public String getName() {
+                return team.getName();
+            }
+
+            @Override
+            public List<Location> getStoreLocations() {
+                java.util.List<Location> storeLocations = new java.util.ArrayList<>();
+                if (team.getShopLocation() != null) storeLocations.add(team.getShopLocation());
+                if (team.getUpgradeLocation() != null) storeLocations.add(team.getUpgradeLocation());
+                return storeLocations;
+            }
+
+            @Override
+            public Location getSpawn() {
+                return team.getSpawnLocation();
+            }
+
+            @Override
+            public int getSize() {
+                return team.getMembers().size();
+            }
+        };
+    }
+
     public static ITeamHandler wrap(com.tomkeuper.bedwars.api.arena.team.ITeam team){
         return  new ITeamHandler() {
             @Override
