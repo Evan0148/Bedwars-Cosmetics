@@ -47,12 +47,12 @@ public class TwerkApocalypseDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Twerk Apocalypse";
+        return "末日热舞";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Spawns tons of more yourself and", "&7have them twerk.");
+        return List.of("&7召唤出一大堆分身，", "&7让它们一起热舞。");
     }
 
     @Override

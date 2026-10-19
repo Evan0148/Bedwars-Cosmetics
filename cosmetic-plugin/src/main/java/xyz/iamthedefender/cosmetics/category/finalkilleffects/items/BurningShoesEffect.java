@@ -30,12 +30,12 @@ public class BurningShoesEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Burning Shoes";
+        return "炙焰之靴";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Makes your shoes burn!");
+        return List.of("&7让你的鞋子燃烧吧！");
     }
 
     @Override

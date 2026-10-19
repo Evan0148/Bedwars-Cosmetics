@@ -30,12 +30,12 @@ public class LightningStrikeEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Lightning Strike";
+        return "雷霆一击";
     }
 
     @Override
     public List<String> getLore() {
-        return Arrays.asList("&7Spawns a thunder strike at", "&7location of victim!");
+        return Arrays.asList("&7在受害者所在位置", "&7召来一道天雷！");
     }
 
     @Override

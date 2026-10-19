@@ -18,6 +18,32 @@ import java.util.List;
 import java.util.Random;
 
 public class ShopKeeperItems {
+    private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
+    static {
+        NAMES.put("none", "无");
+        NAMES.put("random", "随机");
+        NAMES.put("skeleton", "骷髅老板");
+        NAMES.put("pigmen", "猪人老板");
+        NAMES.put("zombie", "僵尸老板");
+        NAMES.put("snowman", "雪人老板");
+        NAMES.put("blaze", "烈焰老板");
+        NAMES.put("creeper", "苦力怕老板");
+        NAMES.put("witch", "女巫老板");
+        NAMES.put("miner", "矿工老板");
+        NAMES.put("bed-salesman", "床铺商人");
+        NAMES.put("holiday-barteneder", "节日酒保");
+        NAMES.put("magic-vendor", "魔法商贩");
+        NAMES.put("bao", "包老板");
+        NAMES.put("li", "李老板");
+        NAMES.put("chen", "陈老板");
+        NAMES.put("wei", "魏老板");
+        NAMES.put("Xiu", "秀老板");
+        NAMES.put("zhao", "赵老板");
+        NAMES.put("king-of-beds", "床中之王");
+        NAMES.put("killer", "杀手老板");
+        NAMES.put("warden", "监守者老板");
+    }
+
 
     public void registerItems() {
         ConfigurationSection section = CosmeticsType.ShopKeeperSkins.getConfig().getYml().getConfigurationSection(CosmeticsType.ShopKeeperSkins.getSectionKey());
@@ -43,15 +69,16 @@ public class ShopKeeperItems {
 
                 @Override
                 public String getDisplayName() {
-                    return StringUtils.replaceHyphensAndCaptalizeFirstLetter(id);
+                    String custom = NAMES.get(id);
+            return custom != null ? custom : StringUtils.replaceHyphensAndCaptalizeFirstLetter(id);
                 }
 
                 @Override
                 public List<String> getLore() {
                     if (getRarity() == RarityType.NONE) {
-                        return List.of("&7Selecting this option disables your", "&7ShopKeeper Skin.");
+                        return List.of("&7选择此选项将停用", "&7你的商店老板皮肤。");
                     }
-                    return List.of("&7Select " + getDisplayName() + " as your", "&7shopkeeper skin!");
+                    return List.of("&7选择" + getDisplayName() + "作为你的", "&7商店老板皮肤！");
                 }
 
                 @Override

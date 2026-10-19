@@ -36,12 +36,12 @@ public class ColdSnapDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Cold Snap";
+        return "急冻寒流";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Chill an area around you to", "&7absolute zero.");
+        return List.of("&7让你身边的区域", "&7冻结至绝对零度。");
     }
 
     @Override

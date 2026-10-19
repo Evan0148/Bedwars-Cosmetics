@@ -126,7 +126,7 @@ public class CategoryMenu extends ChestSystemGui {
         }
 
         if (CosmeticsPlugin.getInstance().getConfig().getBoolean("BackItemInCosmeticsMenu")) {
-            setItem(49, new ItemBuilder().material(Material.ARROW).name("&aBack").build(), (e) -> new MainMenu((Player) e.getWhoClicked()).open((Player) e.getWhoClicked()));
+            setItem(49, new ItemBuilder().material(Material.ARROW).name("&a返回").build(), (e) -> new MainMenu((Player) e.getWhoClicked()).open((Player) e.getWhoClicked()));
         }
 
         createPages(rarityMap);
@@ -148,11 +148,11 @@ public class CategoryMenu extends ChestSystemGui {
         List<ClickableItem> pageItems = items.subList(itemStartIndex, itemEndIndex);
 
         if(page < totalPages) {
-            setItem(47, new ItemBuilder().material(Material.ARROW).name("&aNext page").build(), (e) -> new CategoryMenu(cosmeticsType, title, page + 1).open((Player) e.getWhoClicked()));
+            setItem(47, new ItemBuilder().material(Material.ARROW).name("&a下一页").build(), (e) -> new CategoryMenu(cosmeticsType, title, page + 1).open((Player) e.getWhoClicked()));
         }
 
         if(page > 1) {
-            setItem(51, new ItemBuilder().material(Material.ARROW).name("&aPrevious page").build(), (e) -> new CategoryMenu(cosmeticsType, title, page - 1).open((Player) e.getWhoClicked()));
+            setItem(51, new ItemBuilder().material(Material.ARROW).name("&a上一页").build(), (e) -> new CategoryMenu(cosmeticsType, title, page - 1).open((Player) e.getWhoClicked()));
         }
 
         Map<ClickableItem, RarityType> rarityMapNew = new HashMap<>(

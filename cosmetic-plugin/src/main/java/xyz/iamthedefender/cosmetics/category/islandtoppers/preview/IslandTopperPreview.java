@@ -75,7 +75,7 @@ public class IslandTopperPreview {
             playerLocation = getPlayerLocation();
         } catch (Exception exception) {
             exception.printStackTrace();
-            player.sendMessage(ColorUtil.translate("&cEither Preview location or Player location is not set! Contact the admin."));
+            player.sendMessage(ColorUtil.translate("&c预览地点或玩家地点未设置！请联系管理员。"));
         }
 
         if (cosmeticLocation == null || playerLocation == null) return;

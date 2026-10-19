@@ -41,7 +41,7 @@ public class BedBugsBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Bed Bugs";
+        return "床虱入侵";
     }
     /** {@inheritDoc} */
     @Override

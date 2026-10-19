@@ -42,7 +42,7 @@ public class SquidMissileBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Squid Missile";
+        return "鱿鱼导弹";
     }
     /** {@inheritDoc} */
     @Override

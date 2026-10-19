@@ -35,7 +35,7 @@ public class LightStrikeBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Lightning Strike";
+        return "天雷落床";
     }
     /** {@inheritDoc} */
     @Override

@@ -38,12 +38,12 @@ public class AnvilRainDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Anvil Rain";
+        return "铁雨";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Anvils will rain from sky.");
+        return List.of("&7铁块从天而降。");
     }
 
     @Override

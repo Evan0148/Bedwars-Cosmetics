@@ -25,12 +25,12 @@ public class DarkOakPlank extends WoodSkin {
 
     @Override
     public String getDisplayName() {
-        return "Dark Oak Plank";
+        return "深色橡木木板";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Select the Dark Oak Plank Wood Skin", "&7to be used when placing wood", "&7blocks.");
+        return List.of("&7选择深色橡木木板皮肤", "&7放置木块时将使用", "&7对应的皮肤。");
     }
 
     @Override

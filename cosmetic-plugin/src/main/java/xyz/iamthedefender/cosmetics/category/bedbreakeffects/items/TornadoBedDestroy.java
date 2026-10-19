@@ -40,7 +40,7 @@ public class TornadoBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Tornado";
+        return "旋风来袭";
     }
     /** {@inheritDoc} */
     @Override

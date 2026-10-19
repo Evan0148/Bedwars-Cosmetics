@@ -70,7 +70,7 @@ public class GlyphPreview extends CosmeticPreview {
         String glyphFile = config.getString(CosmeticsType.Glyphs.getSectionKey() + "." + selected + ".file");
 
         if (glyphFile == null) {
-            player.sendMessage(ColorUtil.translate("&cLooks like the glyphFile is null? Contact a developer!"));
+            player.sendMessage(ColorUtil.translate("&c字符画文件为空？请联系管理员！"));
             Logger.getLogger("Minecraft").log(Level.SEVERE, glyphFile + " is null! 1");
             return;
         }
@@ -81,7 +81,7 @@ public class GlyphPreview extends CosmeticPreview {
                         glyphFile);
 
         if (!file.exists()){
-            player.sendMessage(ColorUtil.translate("&cLooks like the glyphFile is null? Contact a developer!"));
+            player.sendMessage(ColorUtil.translate("&c字符画文件为空？请联系管理员！"));
             Logger.getLogger("Minecraft").log(Level.SEVERE, glyphFile + " is null! 2");
             return;
         }

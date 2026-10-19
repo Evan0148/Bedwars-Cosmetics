@@ -30,12 +30,12 @@ public class FireworkEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Firework";
+        return "烟花绽放";
     }
 
     @Override
     public List<String> getLore() {
-        return Arrays.asList("&7Spawns a firework at the", "&7location of victim!");
+        return Arrays.asList("&7在受害者所在位置", "&7燃放烟花！");
     }
 
     @Override

@@ -36,12 +36,12 @@ public class NoneBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "NONE";
+        return "无";
     }
     /** {@inheritDoc} */
     @Override
     public List<String> getLore() {
-            return List.of("&7Selecting this option disables your", "&7Bed Destroy");
+            return List.of("&7选择此选项将停用", "&7破床特效。");
     }
     /** {@inheritDoc} */
     @Override

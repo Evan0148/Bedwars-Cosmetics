@@ -25,12 +25,12 @@ public class BirchPlank extends WoodSkin {
 
     @Override
     public String getDisplayName() {
-        return "Birch Plank";
+        return "白桦木板";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Select the Birch Plank Wood Skin", "&7to be used when placing wood", "&7blocks.");
+        return List.of("&7选择白桦木板皮肤", "&7放置木块时将使用", "&7对应的皮肤。");
     }
 
     @Override

@@ -35,12 +35,12 @@ public class RainbowDollyDance extends VictoryDance implements Listener {
 
     @Override
     public String getDisplayName() {
-        return "Rainbow Dolly";
+        return "彩虹羊多莉";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Spawn Dolly the sheep, When you", "&7hit Dolly she, clones herself.");
+        return List.of("&7召唤小羊多莉，", "&7打她一下，她就会克隆自己。");
     }
 
     @Override

@@ -31,12 +31,12 @@ public class RainingPigsDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Raining Pigs";
+        return "猪猪骤雨";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7The sky will ran with pigs.");
+        return List.of("&7天空将落下无数猪猪。");
     }
 
     @Override

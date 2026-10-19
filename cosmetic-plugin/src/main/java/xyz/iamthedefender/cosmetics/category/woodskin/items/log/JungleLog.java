@@ -25,12 +25,12 @@ public class JungleLog extends WoodSkin {
 
     @Override
     public String getDisplayName() {
-        return "Jungle Log";
+        return "丛林原木";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Select the Jungle Log Wood Skin", "&7to be used when placing wood", "&7blocks.");
+        return List.of("&7选择丛林原木皮肤", "&7放置木块时将使用", "&7对应的皮肤。");
     }
 
     @Override

@@ -64,9 +64,9 @@ public abstract class BedDestroy extends Cosmetics {
         saveIfNotExistsLang("cosmetics." + configPath + "name", getDisplayName());
         // Format the lore
         List<String> finalLore = new ArrayList<>();
-        finalLore.addAll(Arrays.asList("&8Bed Destroy", ""));
+        finalLore.addAll(Arrays.asList("&8破床特效", ""));
         finalLore.addAll(getLore());
-        finalLore.addAll(Arrays.asList("", "&7Rarity: {rarity}","&7Cost: &6{cost}", "", "{status}"));
+        finalLore.addAll(Arrays.asList("", "&7稀有度: {rarity}","&7价格: &6{cost}", "", "{status}"));
 
         saveIfNotExistsLang("cosmetics." + configPath + "lore", finalLore);
         Utility.getApi().getBedDestroyList().add(this);

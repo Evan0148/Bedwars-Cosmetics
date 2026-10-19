@@ -38,7 +38,7 @@ public class BedWarsCosmeticsCommand extends BaseCommand {
     @CatchUnknown
     public void helpCommand(Player player) {
         player.sendMessage(ColorUtil.translate("&8&l======================================"));
-        player.sendMessage(ColorUtil.translate("&6&l     BedWars Cosmetics — Commands"));
+        player.sendMessage(ColorUtil.translate("&6&l     BedWars 特效装扮 — 命令"));
         player.sendMessage(ColorUtil.translate("&8&l======================================"));
         player.sendMessage(" ");
 
@@ -63,7 +63,7 @@ public class BedWarsCosmeticsCommand extends BaseCommand {
     private void send(Player player, String cmd, String desc) {
         player.spigot().sendMessage(
                 Utility.hoverableClickableMessage(
-                        "&6-> &7" + cmd + "    &8- &eclick for details",
+                        "&6-> &7" + cmd + "    &8- &e点击查看详情",
                         desc,
                         cmd
                 )
@@ -76,25 +76,25 @@ public class BedWarsCosmeticsCommand extends BaseCommand {
         Player player = Bukkit.getPlayer(playerName);
 
         if (player == null || !player.isOnline()) {
-            sender.sendMessage(ChatColor.RED + "Invalid or offline player: " + playerName);
+            sender.sendMessage(ChatColor.RED + "无效或离线的玩家: " + playerName);
             return;
         }
 
         plugin.getApi().setSelectedCosmetic(player, cosmeticsType, cosmeticID);
-        sender.sendMessage(ColorUtil.translate("&aSuccess! Note, this command will not check if cosmeticsID is valid!"));
+        sender.sendMessage(ColorUtil.translate("&a成功！注意：此命令不会校验 cosmeticsID 是否有效！"));
     }
 
 
     @Subcommand("reload")
     @CommandPermission("bwcosmetics.reload")
     public void reloadCommand(CommandSender sender) {
-        sender.sendMessage("§aReloading the YAML's, please wait...");
+        sender.sendMessage("§a正在重载配置，请稍候...");
         StartupUtils.updateConfigs();
         MainMenuUtils.saveLores();
         for(ConfigType configType : ConfigType.values()){
             ConfigUtils.get(configType).reload();
         }
-        sender.sendMessage("§aReloaded the YAML's!");
+        sender.sendMessage("§a配置重载完成！");
     }
 
 
@@ -166,13 +166,13 @@ public class BedWarsCosmeticsCommand extends BaseCommand {
         ISetupSession setupSession = plugin.getHandler().getSetupSession(player.getUniqueId());
 
         if (setupSession == null) {
-            player.sendMessage(ChatColor.RED + "You need to be in setup when you use this command!");
+            player.sendMessage(ChatColor.RED + "使用该命令前需要先进入搭建模式！");
             return;
         }
 
         ConfigurationSection section = setupSession.getConfig().getConfigurationSection("Team." + teamName);
         if (section == null) {
-            player.sendMessage(ColorUtil.translate("&cYou need to setup teams before you do this command!"));
+            player.sendMessage(ColorUtil.translate("&c你需要先完成队伍设置才能使用该命令！"));
             return;
         }
 
@@ -189,26 +189,26 @@ public class BedWarsCosmeticsCommand extends BaseCommand {
         hologramStand.setCustomName(color + teamName + " " + ChatColor.GOLD + "ISLAND TOPPER SET" + ChatColor.GRAY + " (HOLOGRAM WILL DISAPPEAR IN 5 SECONDS)");
 
         Run.delayed(hologramStand::remove, 5 * 20);
-        player.sendMessage(ChatColor.GREEN + "Done! saved your current location as Island Topper location for team " + teamName);
+        player.sendMessage(ChatColor.GREEN + "成功！已将当前位置保存为队伍 " + teamName);
     }
 
     @Subcommand("setupPreviewLocation")
     @CommandPermission("bwcosmetics.admin")
     public void onSetPreviewLocation(Player player) {
         saveLocation(player, "cosmetic-preview.cosmetic-location");
-        player.sendMessage(ChatColor.GREEN + "Done! saved your current location as preview location.");
+        player.sendMessage(ChatColor.GREEN + "成功！已将当前位置保存为特效预览地点。");
     }
 
     @Subcommand("setupPlayerLocation")
     @CommandPermission("bwcosmetics.admin")
     public void onSetPlayerLocation(Player player) {
         saveLocation(player, "cosmetic-preview.player-location");
-        player.sendMessage(ChatColor.GREEN + "Done! saved your current location as player location for preview.");
+        player.sendMessage(ChatColor.GREEN + "成功！已将当前位置保存为预览时的玩家站位。");
     }
 
     private void openMenu(Player player, CosmeticsType cosmeticsType) {
         if (Utility.isInArena(player)) {
-            player.sendMessage(ChatColor.RED + "You cannot do that while in a game!");
+            player.sendMessage(ChatColor.RED + "在游戏中不能这样操作！");
             return;
         }
 

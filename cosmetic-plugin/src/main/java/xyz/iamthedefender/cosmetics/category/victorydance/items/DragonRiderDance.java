@@ -37,12 +37,12 @@ public class DragonRiderDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Dragon Rider";
+        return "驭龙骑士";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Ride a Dragon capable of", "&7destroying the map.");
+        return List.of("&7骑上一条足以", "&7摧毁整张地图的巨龙。");
     }
 
     @Override

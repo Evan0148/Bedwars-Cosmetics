@@ -35,12 +35,12 @@ public class BatCruxEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Batcrux";
+        return "黑暗蝙蝠";
     }
 
     @Override
     public List<String> getLore() {
-        return Arrays.asList("&7Spawns many bats at", "&7location of victim!");
+        return Arrays.asList("&7在受害者所在位置", "&7召唤大量蝙蝠！");
     }
 
     @Override
@@ -65,9 +65,9 @@ public class BatCruxEffect extends FinalKillEffect {
             
             int number = i + 1;
             if (onlyVictim) {
-                bat.setCustomName(ColorUtil.translate("&7Deperino's horcrux #" + number));
+                bat.setCustomName(ColorUtil.translate("&7德佩里诺的魂器 #" + number));
             } else {
-                bat.setCustomName(ColorUtil.translate("&7" + victim.getName() + "'s horcrux #" + number));
+                bat.setCustomName(ColorUtil.translate("&7" + victim.getName() + " 的魂器 #" + number));
             }
             bats.add(bat);
         }

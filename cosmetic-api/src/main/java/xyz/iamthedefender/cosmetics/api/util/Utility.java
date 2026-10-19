@@ -90,6 +90,17 @@ public class Utility {
     }
 
     /**
+     * Current default language version. Bump this when default
+     * messages change; the language file is then rebuilt from
+     * code defaults on the next startup.
+     */
+    public static final int LANG_VERSION = 2;
+
+    public static void rebuildLangIfVersionChanged() {
+        api.getHandler().getLanguageUtil().resetForLanguageVersion(LANG_VERSION);
+    }
+
+    /**
      * Check's if the player is in an Arena.
      * @param p player to check for.
      * @return true if player is in arena, false otherwise.

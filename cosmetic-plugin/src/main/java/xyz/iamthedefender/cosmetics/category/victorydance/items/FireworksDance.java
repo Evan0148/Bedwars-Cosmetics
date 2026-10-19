@@ -30,12 +30,12 @@ public class FireworksDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Fireworks";
+        return "烟花庆典";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Celebrate with a splendid", "&7fireworks show!");
+        return List.of("&7来一场绚烂的", "&7烟花庆典吧！");
     }
 
     @Override

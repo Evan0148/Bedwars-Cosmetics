@@ -32,12 +32,12 @@ public class TornadoEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Tornado";
+        return "旋风来袭";
     }
 
     @Override
     public List<String> getLore() {
-        return Arrays.asList("&7Spawns a tornado at the", "&7location of victim!");
+        return Arrays.asList("&7在受害者所在位置", "&7召来一场旋风！");
     }
 
     @Override

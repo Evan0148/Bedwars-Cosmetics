@@ -17,6 +17,12 @@ import java.io.File;
 import java.util.List;
 
 public class IslandTopperItems {
+    private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
+    static {
+        NAMES.put("none", "无");
+        NAMES.put("rubik-cube", "魔方");
+    }
+
 
     public void registerItems() {
         FileConfiguration config = ConfigUtils.getIslandToppers().getYml();
@@ -42,15 +48,16 @@ public class IslandTopperItems {
 
                 @Override
                 public String getDisplayName() {
-                    return replaceHyphens(id);
+                    String custom = NAMES.get(id);
+            return custom != null ? custom : replaceHyphens(id);
                 }
 
                 @Override
                 public List<String> getLore() {
                     if (getRarity() == RarityType.NONE) {
-                        return List.of("&7Selecting this option disables your", "&7Island Topper.");
+                        return List.of("&7选择此选项将停用", "&7你的岛屿顶饰。");
                     }
-                    return List.of("&7Select " + getDisplayName() + " as your Island Topper!");
+                    return List.of("&7选择" + getDisplayName() + "作为你的岛屿顶饰！");
                 }
 
                 @Override

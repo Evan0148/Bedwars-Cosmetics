@@ -86,6 +86,6 @@ public class ConfigUtils {
     }
 
     public static void addExtrasToLang(){
-        Utility.saveIfNotExistsLang("Cosmetics.not-purchase-able", "&cLOCKED");
+        Utility.saveIfNotExistsLang("Cosmetics.not-purchase-able", "&c未解锁");
     }
 }

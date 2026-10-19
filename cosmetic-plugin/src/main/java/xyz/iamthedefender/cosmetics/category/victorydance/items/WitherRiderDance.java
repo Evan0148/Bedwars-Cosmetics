@@ -38,12 +38,12 @@ public class WitherRiderDance extends VictoryDance implements Listener {
 
     @Override
     public String getDisplayName() {
-        return "Wither Rider";
+        return "凋灵骑士";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Ride a wither straight from the", "&7nether - click to shoot Wither", "&7skulls.");
+        return List.of("&7从地狱骑来一只凋灵——", "&7点击即可发射", "&7凋灵之首。");
     }
 
     @Override

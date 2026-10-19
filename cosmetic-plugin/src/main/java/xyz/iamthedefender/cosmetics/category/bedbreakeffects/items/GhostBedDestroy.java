@@ -41,7 +41,7 @@ public class GhostBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Ghost";
+        return "幽灵现形";
     }
     /** {@inheritDoc} */
     @Override

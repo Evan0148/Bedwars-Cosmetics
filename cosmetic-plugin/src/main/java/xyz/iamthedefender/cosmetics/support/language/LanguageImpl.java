@@ -58,4 +58,16 @@ public class LanguageImpl implements ILanguage {
             save();
         }
     }
+
+    @Override
+    public void resetForLanguageVersion(int version) {
+        if (config.getInt("lang-version", -1) == version) return;
+        for (String key : new java.util.ArrayList<>(config.getKeys(true))) {
+            if (key.startsWith("cosmetics")) {
+                config.set(key, null);
+            }
+        }
+        config.set("lang-version", version);
+        save();
+    }
 }

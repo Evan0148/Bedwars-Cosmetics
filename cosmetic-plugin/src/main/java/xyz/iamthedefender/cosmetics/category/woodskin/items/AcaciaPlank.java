@@ -25,12 +25,12 @@ public class AcaciaPlank extends WoodSkin {
 
     @Override
     public String getDisplayName() {
-        return "Acacia Plank";
+        return "金合欢木板";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Select the Acacia Plank Wood Skin", "&7to be used when placing wood", "&7blocks.");
+        return List.of("&7选择金合欢木板皮肤", "&7放置木块时将使用", "&7对应的皮肤。");
     }
 
     @Override

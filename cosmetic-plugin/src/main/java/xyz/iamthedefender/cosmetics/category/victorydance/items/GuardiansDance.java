@@ -38,12 +38,12 @@ public class GuardiansDance extends VictoryDance implements Listener {
 
     @Override
     public String getDisplayName() {
-        return "Guardians";
+        return "守卫者召唤";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Perform a Guardian", "&7summoning ritual.");
+        return List.of("&7举行一场", "&7守卫者召唤仪式。");
     }
 
     @Override

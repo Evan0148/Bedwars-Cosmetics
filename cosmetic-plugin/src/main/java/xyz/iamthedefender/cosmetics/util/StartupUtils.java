@@ -273,13 +273,13 @@ public class StartupUtils
      * no-coins, spray-msg, gui-title.
      */
     public static void updateConfigs(){
-        Utility.saveIfNotExistsLang("cosmetics.selected", "&aSELECTED!");
-        Utility.saveIfNotExistsLang("cosmetics.click-to-select", "&eClick to select.");
-        Utility.saveIfNotExistsLang("cosmetics.click-to-purchase", "&eClick to purchase.");
-        Utility.saveIfNotExistsLang("cosmetics.not-purchase-able", "&cLOCKED.");
-        Utility.saveIfNotExistsLang("cosmetics.no-coins", "&cYou don't have enough coins!");
-        Utility.saveIfNotExistsLang("cosmetics.spray-msg", "&cYou must wait 3 seconds between spray uses!");
-        Utility.saveIfNotExistsLang("cosmetics.gui-title", "Cosmetics");
+        Utility.saveIfNotExistsLang("cosmetics.selected", "&a已选中!");
+        Utility.saveIfNotExistsLang("cosmetics.click-to-select", "&e点击选择。");
+        Utility.saveIfNotExistsLang("cosmetics.click-to-purchase", "&e点击购买。");
+        Utility.saveIfNotExistsLang("cosmetics.not-purchase-able", "&c未解锁");
+        Utility.saveIfNotExistsLang("cosmetics.no-coins", "&c你没有足够的硬币!");
+        Utility.saveIfNotExistsLang("cosmetics.spray-msg", "&c喷雾使用间隔为 3 秒，请稍候!");
+        Utility.saveIfNotExistsLang("cosmetics.gui-title", "特效装扮");
     }
 
     /**
@@ -399,9 +399,8 @@ public class StartupUtils
             Bukkit.getLogger().warning("Can't find worldedit! IslandTopper will not load!");
         }
         KillMessageItems.registerConfigItems();
-        if (citizensEnabled) {
-            new ShopKeeperItems().registerItems();
-        }
+        //Always register (the yml entries need no Citizens; Citizens is only used to apply skins to NPCs)
+        new ShopKeeperItems().registerItems();
         SprayItems.registerConfigItems();
         new ProjectileTrailItems().registerConfigItems();
 

@@ -1,6 +1,6 @@
 Debug: false
 BackItemInCosmeticsMenu: true
-Final-Kill-Suffix: "&b&lFINAL KILL!"
+Final-Kill-Suffix: "&b&l最终击杀!"
 # plugins/BW1058-Cosmetics/Sprays
 Spray-Dir: "Sprays"
 settings:

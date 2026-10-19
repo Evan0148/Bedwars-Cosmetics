@@ -27,63 +27,63 @@ import java.util.stream.Collectors;
 public class MainMenuUtils {
 
     public static void saveLores() {
-        List<String> sprays = Arrays.asList("&7Select a spray to show off all", "&7over the place! Sprays slot can", "&7be found on every spawn islands", "&7and some center islands.", "", "&7Unlocked:&a {ownedSpray}", "&7Currently Selected:", "{spray}", "", "&eClick to view.");
+        List<String> sprays = Arrays.asList("&7选择一个喷雾，", "&7在地图上到处涂鸦！", "&7喷雾使用点位于", "&7每个出生岛和部分中心岛。", "", "&7已解锁:&a {ownedSpray}", "&7当前使用:", "{spray}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Sprays.lore", sprays);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Sprays.name", "&aSprays");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Sprays.name", "&a喷雾");
 
-        List<String> pts = Arrays.asList("&7Change your projectile particle", "&7trail effects.", "", "&7Unlocked:&a {ownedpt}", "&7Currently Selected:", "{projectile}", "", "&eClick to view.");
+        List<String> pts = Arrays.asList("&7更换你的弹道粒子", "&7拖尾特效。", "", "&7已解锁:&a {ownedpt}", "&7当前使用:", "{projectile}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Projectile-Trails.lore", pts);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Projectile-Trails.name", "&aProjectile Trails");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Projectile-Trails.name", "&a弹道特效");
 
-        List<String> finalke = Arrays.asList("&7A selection of various effects", "&7to chosse from that will trigger", "&7whenever you final kill an", "&7enemy!", "", "&7Unlocked:&a {ownedfinalkill}", "&7Currently Selected:", "&a" + "{finalkill}", "", "&eClick to view.");
+        List<String> finalke = Arrays.asList("&7各种不同的特效，", "&7每当你最终击杀敌人", "&7时就会触发！", "", "&7已解锁:&a {ownedfinalkill}", "&7当前使用:", "&a" + "{finalkill}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.FinalKill-Effects.lore", finalke);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.FinalKill-Effects.name", "&aFinal Kill Effects");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.FinalKill-Effects.name", "&a最终击杀特效");
 
-        List<String> km = Arrays.asList("&7Select a Kill Message package to", "&7replace chat messages when you", "&7kill players.", "", "&7Unlocked:&a {ownedkm}", "&7Currently Selected:", "{killmsg}", "", "&eClick to view.");
+        List<String> km = Arrays.asList("&7选择一个击杀信息套餐，", "&7替换击杀玩家时", "&7聊天栏显示的消息。", "", "&7已解锁:&a {ownedkm}", "&7当前使用:", "{killmsg}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Kill-Messages.lore", km);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Kill-Messages.name", "&aKill Messages");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Kill-Messages.name", "&a击杀信息");
 
-        List<String> gly = Arrays.asList("&7Select a Glyph image which will", "&7appear when picking up diamonds and", "&7emeralds!", "", "&7Unlocked:&a {ownedgly}", "&7Currently Selected:", "{glyphs}", "", "&eClick to view.");
+        List<String> gly = Arrays.asList("&7选择一个字符图案，", "&7捡起钻石和绿宝石时", "&7就会显现！", "", "&7已解锁:&a {ownedgly}", "&7当前使用:", "{glyphs}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Glyphs.lore", gly);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Glyphs.name", "&aGlyphs");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Glyphs.name", "&a字符图案");
 
-        List<String> bbe = Arrays.asList("&7Select from various Bed Destroy", "&7effects, which will occur when you", "&7break a bed!", "", "&7Unlocked:&a {ownedbbe}", "&7Currently Selected:", "{bedbreak}", "", "&eClick to view.");
+        List<String> bbe = Arrays.asList("&7选择一种破床特效，", "&7当你破坏床时就会触发！", "", "&7已解锁:&a {ownedbbe}", "&7当前使用:", "{bedbreak}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Bed-Destroys.lore", bbe);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Bed-Destroys.name", "&aBed Destroys");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Bed-Destroys.name", "&a破床特效");
 
-        List<String> ws = Arrays.asList("&7Change the skin of wood", "&7in-game.", "", "&7Unlocked:&a {ownedws}", "&7Currently Selected:", "{woodskin}", "", "&eClick to view.");
+        List<String> ws = Arrays.asList("&7更换游戏内", "&7木块的皮肤。", "", "&7已解锁:&a {ownedws}", "&7当前使用:", "{woodskin}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.WoodSkins.lore", ws);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.WoodSkins.name", "&aWood Skins");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.WoodSkins.name", "&a木块皮肤");
 
-        List<String> vd = Arrays.asList("&7Celebrate by gloating and", "&7showing off to other players", "&7whenever you win!", "", "&7Unlocked:&a {ownedvd}", "&7Currently Selected:", "{victory}", "", "&eClick to view.");
+        List<String> vd = Arrays.asList("&7获胜时炫耀庆祝，", "&7向其他玩家", "&7展示你的胜利舞！", "", "&7已解锁:&a {ownedvd}", "&7当前使用:", "{victory}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Victory-Dances.lore", vd);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Victory-Dances.name", "&aVictory Dances");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Victory-Dances.name", "&a胜利舞");
 
-        List<String> islandtoppers = Arrays.asList("&7Select an Island Topper to", "&7decorate your island with! In", "&7Doubles and Teams Mode a random", "&7player's choice from each team is choosen.", "", "&7Unlocked:&a {ownedit}", "&7Currently Selected:", "&a{islandtopper}", "", "&eClick to select.");
+        List<String> islandtoppers = Arrays.asList("&7选择一个岛屿顶饰，", "&7装饰你的岛屿！在双人", "&7和团队模式中，随机选取", "&7每队一名玩家的选择。", "", "&7已解锁:&a {ownedit}", "&7当前使用:", "&a{islandtopper}", "", "&e点击选择。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Island-Toppers.lore", islandtoppers);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Island-Toppers.name", "&aIsland Toppers");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Island-Toppers.name", "&a岛屿顶饰");
 
-        List<String> shopkeepers = Arrays.asList("&7Select from various ShopKeeper", "&7skin, which will replace how the", "&7ShopKeeper look in-game! In", "&7Doubles and Teams Mode a random", "&7player's choice from each team", "&7is choosen.", "", "&7Unlocked:&a {ownedshopkeeper}", "&7Currently Selected:", "{shopkeeper}", "", "&eClick to view.");
+        List<String> shopkeepers = Arrays.asList("&7选择一个商店老板皮肤，", "&7替换游戏内商店老板", "&7的形象！在双人和团队", "&7模式中，随机选取每队", "&7一名玩家的选择。", "", "&7已解锁:&a {ownedshopkeeper}", "&7当前使用:", "{shopkeeper}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.ShopKeeperSkins.lore", shopkeepers);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.ShopKeeperSkins.name", "&aShopKeeperSkins");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.ShopKeeperSkins.name", "&a商店老板皮肤");
 
-        List<String> dc = Arrays.asList("&7Let others know just how salty", "&7your tears are every time you", "&7die with these death cries!", "", "&7Unlocked:&a {owneddc}", "&7Currently Selected:", "{deathcries}", "", "&eClick to view.");
+        List<String> dc = Arrays.asList("&7每次阵亡时，让别人", "&7知道你的眼泪有多咸，", "&7挑选一个死亡音效吧！", "", "&7已解锁:&a {owneddc}", "&7当前使用:", "{deathcries}", "", "&e点击查看。");
         Utility.saveIfNotExistsLang("cosmetics.main-menu.Death-Cries.lore", dc);
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Death-Cries.name", "&aDeath Cries");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Death-Cries.name", "&a死亡音效");
 
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Back.name", "&aBack");
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Back.lore", List.of("&7Click to go back!"));
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Back.name", "&a返回");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Back.lore", List.of("&7点击返回！"));
 
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Balance.name", "&6Balance");
-        Utility.saveIfNotExistsLang("cosmetics.main-menu.Balance.lore", List.of("&7Balance: &6%vault_eco_balance_formatted%"));
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Balance.name", "&6余额");
+        Utility.saveIfNotExistsLang("cosmetics.main-menu.Balance.lore", List.of("&7余额: &6%vault_eco_balance_formatted%"));
 
         List<String> defaultList = new ArrayList<>(List.of("Sprays", "Projectile-Trails", "FinalKill-Effects", "Kill-Messages", "Glyphs", "Bed-Destroys", "Wood-Skins", "Victory-Dances", "Island-Toppers", "ShopKeeperSkins", "Death-Cries", "Back", "Balance"));
         ConfigManager config = ConfigUtils.getMainConfig();
         ConfigurationSection section = config.getYml().getConfigurationSection("Main-Menu");
         if (section != null) {
             for (String key : section.getKeys(false)) {
-                Utility.saveIfNotExistsLang("cosmetics.main-menu." + key + ".name", "&cName not set!");
-                Utility.saveIfNotExistsLang("cosmetics.main-menu." + key + ".lore", List.of("&cLore not set!"));
+                Utility.saveIfNotExistsLang("cosmetics.main-menu." + key + ".name", "&c未设置名称!");
+                Utility.saveIfNotExistsLang("cosmetics.main-menu." + key + ".lore", List.of("&c未设置描述!"));
             }
         }
         config.save();

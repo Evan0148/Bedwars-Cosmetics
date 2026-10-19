@@ -31,12 +31,12 @@ public class HeartAuraEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Heart Aura";
+        return "爱心光环";
     }
 
     @Override
     public List<String> getLore() {
-        return Arrays.asList("&7Spawns tons of heart at", "&7location of victim!");
+        return Arrays.asList("&7在受害者所在位置", "&7撒满爱心！");
     }
 
     @Override

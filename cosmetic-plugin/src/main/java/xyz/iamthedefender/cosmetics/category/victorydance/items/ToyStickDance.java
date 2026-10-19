@@ -45,12 +45,12 @@ public class ToyStickDance extends VictoryDance implements Listener {
 
     @Override
     public String getDisplayName() {
-        return "Toy Stick";
+        return "玩具魔杖";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7This humble baton sold at", "&7\"Sticks R Us\" is actually a", "&7magic wand. Also it blows up", "&7things.");
+        return List.of("&7这家“玩具棒超市”", "&7里卖的普通小棒其实是魔杖，", "&7而且它还能把", "&7东西炸飞。");
     }
 
     @Override
@@ -67,11 +67,11 @@ public class ToyStickDance extends VictoryDance implements Listener {
     public void execute(Player winner) {
         ItemStack i = new ItemStack(Material.STICK);
         ItemMeta im = i.getItemMeta();
-        im.setDisplayName(ColorUtil.translate("&aToy Stick"));
+        im.setDisplayName(ColorUtil.translate("&a玩具魔杖"));
 
         ArrayList<String> lore = new ArrayList<String>();
-        lore.add(ColorUtil.translate("&7Right Click on a block"));
-        lore.add(ColorUtil.translate("&7to fly!"));
+        lore.add(ColorUtil.translate("&7右键点击方块"));
+        lore.add(ColorUtil.translate("&7即可起飞!"));
         im.setLore(lore);
 
         i.setItemMeta(im);

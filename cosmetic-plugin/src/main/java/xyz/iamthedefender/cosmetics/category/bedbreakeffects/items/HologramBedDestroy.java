@@ -38,7 +38,7 @@ public class HologramBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Hologram";
+        return "全息播报";
     }
     /** {@inheritDoc} */
     @Override
@@ -61,7 +61,7 @@ public class HologramBedDestroy extends BedDestroy {
         ArmorStand stand = (ArmorStand) player.getWorld().spawnEntity(bedLocation.add(0,1,0), EntityType.ARMOR_STAND);
         stand.setVisible(false);
         stand.setGravity(false);
-        stand.setCustomName(ColorUtil.translate("&c" + victimTeam.getName() + "'s Bed was destroyed by " + player.getDisplayName()));
+        stand.setCustomName(ColorUtil.translate("&c" + victimTeam.getName() + " 的床被 " + player.getDisplayName() + " 破坏了!"));
         stand.setCustomNameVisible(true);
     }
 }

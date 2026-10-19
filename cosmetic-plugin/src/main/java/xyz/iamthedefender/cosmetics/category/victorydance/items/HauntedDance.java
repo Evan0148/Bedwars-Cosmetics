@@ -37,12 +37,12 @@ public class HauntedDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Haunted";
+        return "亡魂之夜";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7It's spooky time! The Victory", "&7Dance releases the souls of a", "&7bunch of poor players you killed", "&7in past games to celebrate your", "&7victory.");
+        return List.of("&7诡异时刻到！胜利舞", "&7会释放出那些你在这几局", "&7游戏里干掉的倒霉鬼的灵魂，", "&7来一起庆祝", "&7你的胜利。");
     }
 
     @Override

@@ -34,12 +34,12 @@ public class YeeHawDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Yee Haw";
+        return "牛仔竞技";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Ride a horse like it's 1876.");
+        return List.of("&7像 1876 年那样骑马狂奔。");
     }
 
     @Override

@@ -37,12 +37,12 @@ public class RektEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Rekt";
+        return "REKT烂杀";
     }
 
     @Override
     public List<String> getLore() {
-        return Arrays.asList("&7Spawns a rekt sign at the", "&7location of victim");
+        return Arrays.asList("&7在受害者所在位置", "&7立一块 REKT 牌子");
     }
 
     @Override

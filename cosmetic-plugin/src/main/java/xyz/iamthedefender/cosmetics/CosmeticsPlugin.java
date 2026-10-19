@@ -26,6 +26,7 @@ import xyz.iamthedefender.cosmetics.api.handler.IHandler;
 import xyz.iamthedefender.cosmetics.api.handler.IWorldEditHandler;
 import xyz.iamthedefender.cosmetics.api.menu.SystemGuiManager;
 import xyz.iamthedefender.cosmetics.api.util.Run;
+import xyz.iamthedefender.cosmetics.api.util.Utility;
 import xyz.iamthedefender.cosmetics.api.util.config.ConfigType;
 import xyz.iamthedefender.cosmetics.api.util.config.ConfigUtils;
 import xyz.iamthedefender.cosmetics.api.util.config.DefaultsUtils;
@@ -142,6 +143,9 @@ public class CosmeticsPlugin extends JavaPlugin {
         for (ConfigType configType : ConfigType.values()) {
             Optional.ofNullable(ConfigUtils.get(configType)).ifPresent(ConfigManager::save);
         }
+
+        // Rebuild language defaults when default language version changes
+        Utility.rebuildLangIfVersionChanged();
 
         ConfigUtils.addExtrasToLang();
 

@@ -38,7 +38,7 @@ public class TheifBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Theif";
+        return "神偷入侵";
     }
     /** {@inheritDoc} */
     @Override

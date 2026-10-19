@@ -61,9 +61,9 @@ public abstract class FinalKillEffect extends Cosmetics {
         saveIfNotExistsLang("cosmetics." + configPath + "name", getDisplayName());
         // Format the lore
         List<String> finalLore = new ArrayList<>();
-        finalLore.addAll(Arrays.asList("&8Final Kill Effects", ""));
+        finalLore.addAll(Arrays.asList("&8最终击杀特效", ""));
         finalLore.addAll(getLore());
-        finalLore.addAll(Arrays.asList("", "&eRight-Click to preview!", "" ,"&7Rarity: {rarity}","&7Cost: &6{cost}", "", "{status}"));
+        finalLore.addAll(Arrays.asList("", "&e右键预览!", "" ,"&7稀有度: {rarity}","&7价格: &6{cost}", "", "{status}"));
 
         saveIfNotExistsLang("cosmetics." + configPath + "lore", finalLore);
         Utility.getApi().getFinalKillList().add(this);

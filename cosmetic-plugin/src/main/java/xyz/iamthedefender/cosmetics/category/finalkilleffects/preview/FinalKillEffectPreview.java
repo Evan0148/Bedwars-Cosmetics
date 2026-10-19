@@ -90,7 +90,7 @@ public class FinalKillEffectPreview extends CosmeticPreview {
         NPC derperinoNPC = registry.createNPC(EntityType.PLAYER, "");
 
         victimNPC.setName(player.getDisplayName());
-        derperinoNPC.setName(ColorUtil.translate("&7Derperino"));
+        derperinoNPC.setName(ColorUtil.translate("&7德佩里诺"));
 
         String[] victimNPCValues = Utility.getFromName(player.getName());
 

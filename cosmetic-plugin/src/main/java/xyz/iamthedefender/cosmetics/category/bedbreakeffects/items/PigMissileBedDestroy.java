@@ -42,7 +42,7 @@ public class PigMissileBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Pig Missile";
+        return "猪猪导弹";
     }
     /** {@inheritDoc} */
     @Override

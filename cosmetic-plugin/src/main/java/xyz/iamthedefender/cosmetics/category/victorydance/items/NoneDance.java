@@ -26,12 +26,12 @@ public class NoneDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "NONE";
+        return "无";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Selecting this option disables your", "&7Victory Dance.");
+        return List.of("&7选择此选项将停用", "&7你的胜利舞。");
     }
 
     @Override

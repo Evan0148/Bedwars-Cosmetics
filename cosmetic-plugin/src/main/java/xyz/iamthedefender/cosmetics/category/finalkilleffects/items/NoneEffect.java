@@ -27,12 +27,12 @@ public class NoneEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "NONE";
+        return "无";
     }
 
     @Override
     public List<String> getLore() {
-            return List.of("&7Selecting this option disables your", "&7Final Kill Effect.");
+            return List.of("&7选择此选项将停用", "&7最终击杀特效。");
     }
 
     @Override

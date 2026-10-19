@@ -8,12 +8,12 @@ public class Messages {
 
     public static final Entry MAIN_MENU_GUI_TITLE = new Entry(
             "main_menu.title",
-            "Cosmetics"
+            "特效装扮"
     );
 
     public static final Entry SPRAY_CLICK = of(
             "spray_click",
-            "&eClick!"
+            "&e点击!"
     );
 
     public static Entry of(String path, String defaultValue) {

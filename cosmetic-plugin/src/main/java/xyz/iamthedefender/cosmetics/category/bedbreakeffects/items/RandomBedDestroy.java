@@ -33,12 +33,12 @@ public class RandomBedDestroy extends BedDestroy {
 
     @Override
     public String getDisplayName() {
-        return "Random";
+        return "随机特效";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Select RANDOM as your" ,"bed destroy.");
+        return List.of("&7随机选取" ,"破床特效。");
     }
 
     @Override

@@ -110,14 +110,14 @@ public class SprayPreview extends CosmeticPreview {
         String sprayURL = config.getString(CosmeticsType.Sprays.getSectionKey() + "." + selected + ".url");
         if (sprayFile == null) {
             if (!renderer.load(sprayURL)) {
-                player.sendMessage(ColorUtil.translate("&cLooks like there's an error rendering the Spray, contact the admin!"));
+                player.sendMessage(ColorUtil.translate("&c喷雾渲染出错，请联系管理员！"));
                 Logger.getLogger("Minecraft").log(Level.SEVERE, "Could not load the URL for the " + selected + " Check if the URL in Sprays.yml is valid!");
                 return;
             }
         } else {
             File file = new File(Cosmetics.getInstance().getHandler().getAddonPath() + "/" + Cosmetics.getInstance().getConfig().getString("Spray-Dir") + "/" + sprayFile);
             if (!renderer.load(file)) {
-                player.sendMessage(ColorUtil.translate("&cLooks like there's an error rendering the Spray, contact the admin!"));
+                player.sendMessage(ColorUtil.translate("&c喷雾渲染出错，请联系管理员！"));
                 Logger.getLogger("Minecraft").log(Level.SEVERE, "Could not load the File for the " + selected + " Check if the File in Sprays.yml is valid!");
                 Logger.getLogger("Minecraft").log(Level.SEVERE, "FilePath: " + file.getAbsolutePath());
                 return;

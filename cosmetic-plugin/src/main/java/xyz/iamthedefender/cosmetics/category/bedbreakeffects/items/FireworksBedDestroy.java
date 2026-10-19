@@ -36,7 +36,7 @@ public class FireworksBedDestroy extends BedDestroy {
     /** {@inheritDoc} */
     @Override
     public String getDisplayName() {
-        return "Fireworks";
+        return "烟花庆典";
     }
     /** {@inheritDoc} */
     @Override

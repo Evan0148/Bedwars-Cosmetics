@@ -34,12 +34,12 @@ public class EggExplosionBedDestroy extends BedDestroy {
 
     @Override
     public String getDisplayName() {
-        return "Egg Explosion";
+        return "鸡蛋轰炸";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Explodes the ground with an", "&7explosion of chickens!");
+        return List.of("&7用一场鸡群爆炸", "&7炸翻地面吧！");
     }
 
     @Override

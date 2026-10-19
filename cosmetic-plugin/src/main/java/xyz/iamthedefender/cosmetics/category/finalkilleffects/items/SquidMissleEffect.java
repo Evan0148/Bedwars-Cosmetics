@@ -36,12 +36,12 @@ public class SquidMissleEffect extends FinalKillEffect {
 
     @Override
     public String getDisplayName() {
-        return "Squid Missile";
+        return "鱿鱼导弹";
     }
 
     @Override
     public List<String> getLore() {
-        return Arrays.asList("&7Spawn a flying squid at", "&7location of victim's death!");
+        return Arrays.asList("&7在受害者的死亡处", "&7放出一只飞天鱿鱼！");
     }
 
     @Override

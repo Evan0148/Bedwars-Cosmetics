@@ -13,6 +13,30 @@ import xyz.iamthedefender.cosmetics.util.StringUtils;
 import java.util.List;
 
 public class DeathCryItems {
+    private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
+    static {
+        NAMES.put("none", "无");
+        NAMES.put("bazinga", "Bazinga!");
+        NAMES.put("enderman", "末影人");
+        NAMES.put("pig", "猪哼哼");
+        NAMES.put("bat", "蝙蝠尖啸");
+        NAMES.put("skeleton", "骷髅碎响");
+        NAMES.put("wolf", "恶犬咆哮");
+        NAMES.put("burp", "打嗝");
+        NAMES.put("firework", "烟花咻咻");
+        NAMES.put("splash", "入水扑通");
+        NAMES.put("sad-puppy", "悲伤小狗");
+        NAMES.put("sad-moo", "伤感的哞");
+        NAMES.put("plop", "噗通");
+        NAMES.put("ding", "叮~");
+        NAMES.put("fireball", "火球轰");
+        NAMES.put("explode", "爆炸");
+        NAMES.put("zombie", "僵尸低吼");
+        NAMES.put("breath", "喘息");
+        NAMES.put("click", "咔哒");
+        NAMES.put("creepy", "阴森低语");
+    }
+
 
     public void registerConfigItems(){
         FileConfiguration config = ConfigUtils.getDeathCries().getYml();
@@ -40,15 +64,16 @@ public class DeathCryItems {
 
                 @Override
                 public String getDisplayName() {
-                    return StringUtils.replaceHyphensAndCaptalizeFirstLetter(identifier);
+                    String custom = NAMES.get(identifier);
+            return custom != null ? custom : StringUtils.replaceHyphensAndCaptalizeFirstLetter(identifier);
                 }
 
                 @Override
                 public List<String> getLore() {
                     if (getRarity() == RarityType.NONE){
-                        return List.of("&7Selecting this option disables your", "&7Death Cry.");
+                        return List.of("&7选择此选项将停用", "&7你的死亡音效。");
                     }
-                    return List.of("&7Select " + getDisplayName() + " as your Death cry");
+                    return List.of("&7选择" + getDisplayName() + "作为你的死亡音效");
                 }
 
                 @Override

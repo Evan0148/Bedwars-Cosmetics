@@ -14,6 +14,31 @@ import xyz.iamthedefender.cosmetics.util.StringUtils;
 import java.util.List;
 
 public class SprayItems {
+    private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
+    static {
+        NAMES.put("server-logo", "服务器标徽");
+        NAMES.put("diamond", "钻石");
+        NAMES.put("creeper", "苦力怕");
+        NAMES.put("thanks", "感谢");
+        NAMES.put("invisibility-potion", "隐形药水");
+        NAMES.put("disco-pumpkin", "迪斯科南瓜");
+        NAMES.put("reveillion", "圣诞晚宴");
+        NAMES.put("christmas-tree", "圣诞树");
+        NAMES.put("easter-eggs", "复活节彩蛋");
+        NAMES.put("careful-santa", "小心圣诞老人");
+        NAMES.put("bunny-GG", "兔子GG");
+        NAMES.put("fireworks", "烟花");
+        NAMES.put("year-of-the-dog", "狗年");
+        NAMES.put("year-of-the-pig", "猪年");
+        NAMES.put("lantern", "花灯");
+        NAMES.put("year-of-the-rat", "鼠年");
+        NAMES.put("year-of-the-ox", "牛年");
+        NAMES.put("lion-Dancer", "舞狮");
+        NAMES.put("year-of-the-tiger", "虎年");
+        NAMES.put("sorry", "抱歉");
+        NAMES.put("enderman", "末影人");
+    }
+
 
     public static void registerConfigItems(){
         ConfigurationSection section = CosmeticsType.Sprays.getConfig().getYml().getConfigurationSection(CosmeticsType.Sprays.getSectionKey());
@@ -39,15 +64,16 @@ public class SprayItems {
 
                 @Override
                 public String getDisplayName() {
-                    return StringUtils.replaceHyphensAndCaptalizeFirstLetter(id);
+                    String custom = NAMES.get(id);
+            return custom != null ? custom : StringUtils.replaceHyphensAndCaptalizeFirstLetter(id);
                 }
 
                 @Override
                 public List<String> getLore() {
                     if (getRarity() == RarityType.NONE){
-                        return List.of("&7Selecting this option disables your", "&7Spray.");
+                        return List.of("&7选择此选项将停用", "&7你的喷雾。");
                     }
-                    return List.of("&7Select " + getDisplayName() + " as your", "&7Spray!");
+                    return List.of("&7选择" + getDisplayName() + "作为你的", "&7喷雾！");
                 }
 
                 @Override

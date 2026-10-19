@@ -35,12 +35,12 @@ public class FloatingLanternDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Floating Lantern";
+        return "孔明灯";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Spawn floating lanterns to", "&7brighten up the night.");
+        return List.of("&7放出孔明灯，", "&7点亮夜晚。");
     }
 
     @Override

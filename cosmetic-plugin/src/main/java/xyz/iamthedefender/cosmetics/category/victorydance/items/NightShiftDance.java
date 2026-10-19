@@ -28,12 +28,12 @@ public class NightShiftDance extends VictoryDance {
 
     @Override
     public String getDisplayName() {
-        return "Night Shift";
+        return "昼夜交替";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Set it to day, set it to night,", "&7repeat, like a god");
+        return List.of("&7把时间拨到白天，再拨到黑夜，", "&7往复循环，如同神明。");
     }
 
     @Override

@@ -54,7 +54,10 @@ public class PlayerJoinListener implements Listener {
         playerData.setIslandTopper(IslandTopper.getDefault(player).getIdentifier());
         playerData.setKillMessage(KillMessage.getDefault(player).getIdentifier());
         playerData.setProjectileTrail(ProjectileTrail.getDefault(player).getIdentifier());
-        playerData.setShopkeeperSkin(ShopKeeperSkin.getDefault(player).getIdentifier());
+        ShopKeeperSkin shopKeeperSkin = ShopKeeperSkin.getDefault(player);
+        if (shopKeeperSkin != null) {
+            playerData.setShopkeeperSkin(shopKeeperSkin.getIdentifier());
+        }
         playerData.setSpray(Spray.getDefault(player).getIdentifier());
         playerData.setVictoryDance(VictoryDance.getDefault(player).getIdentifier());
         playerData.setWoodSkin(WoodSkin.getDefault(player).getIdentifier());

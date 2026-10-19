@@ -25,12 +25,12 @@ public class OakLog extends WoodSkin {
 
     @Override
     public String getDisplayName() {
-        return "Oak Log";
+        return "橡木原木";
     }
 
     @Override
     public List<String> getLore() {
-        return List.of("&7Select the Oak Log Wood Skin", "&7to be used when placing wood", "&7blocks.");
+        return List.of("&7选择橡木原木皮肤", "&7放置木块时将使用", "&7对应的皮肤。");
     }
 
     @Override

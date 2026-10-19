@@ -12,6 +12,28 @@ import xyz.iamthedefender.cosmetics.util.StringUtils;
 import java.util.List;
 
 public class ProjectileTrailItems {
+    private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
+    static {
+        NAMES.put("none", "无");
+        NAMES.put("slime", "史莱姆");
+        NAMES.put("ender", "末影");
+        NAMES.put("lava", "熔岩");
+        NAMES.put("potion", "药水");
+        NAMES.put("water", "水流");
+        NAMES.put("black-smoke", "黑烟");
+        NAMES.put("white-smoke", "白烟");
+        NAMES.put("note", "音符");
+        NAMES.put("blue-dust", "蓝色微粒");
+        NAMES.put("red-dust", "红色微粒");
+        NAMES.put("purple-dust", "紫色微粒");
+        NAMES.put("fire", "火焰");
+        NAMES.put("magic", "魔法");
+        NAMES.put("firework", "烟花");
+        NAMES.put("angry-villager", "愤怒村民");
+        NAMES.put("happy-villager", "欢乐村民");
+        NAMES.put("portal", "传送门粒子");
+    }
+
 
     public void registerConfigItems(){
         ConfigurationSection section = CosmeticsType.ProjectileTrails.getConfig().getYml().getConfigurationSection(CosmeticsType.ProjectileTrails.getSectionKey());
@@ -37,15 +59,16 @@ public class ProjectileTrailItems {
 
                 @Override
                 public String getDisplayName() {
-                    return StringUtils.replaceHyphensAndCaptalizeFirstLetter(id);
+                    String custom = NAMES.get(id);
+            return custom != null ? custom : StringUtils.replaceHyphensAndCaptalizeFirstLetter(id);
                 }
 
                 @Override
                 public List<String> getLore() {
                     if (getRarity() == RarityType.NONE){
-                        return List.of("&7Selecting this option disables your", "&7Projectile Trail.");
+                        return List.of("&7选择此选项将停用", "&7你的弹道特效。");
                     }
-                    return List.of("&7Select " + getDisplayName() + " as your Projectile,", "&7trail!");
+                    return List.of("&7选择" + getDisplayName() + "作为你的", "&7弹道特效！");
                 }
 
                 @Override

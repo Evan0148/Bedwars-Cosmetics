@@ -18,6 +18,19 @@ import java.io.File;
 import java.util.List;
 
 public class GlyphItems {
+    private static final java.util.Map<String, String> NAMES = new java.util.HashMap<>();
+    static {
+        NAMES.put("none", "无");
+        NAMES.put("iron", "铁锭");
+        NAMES.put("gold", "金锭");
+        NAMES.put("thumbsup", "点赞");
+        NAMES.put("thumbsdown", "差评");
+        NAMES.put("sword", "利剑");
+        NAMES.put("storm", "风暴");
+        NAMES.put("burn", "燃烧");
+        NAMES.put("bronze-shield", "青铜盾牌");
+    }
+
 
     public void registerConfigItems(){
         FileConfiguration config = ConfigUtils.getGlyphs().getYml();
@@ -44,15 +57,16 @@ public class GlyphItems {
 
                 @Override
                 public String getDisplayName() {
-                    return replaceHyphens(identifier);
+                    String custom = NAMES.get(identifier);
+            return custom != null ? custom : replaceHyphens(identifier);
                 }
 
                 @Override
                 public List<String> getLore() {
                     if (getRarity() == RarityType.NONE){
-                        return List.of("&7Selecting this option disables your", "&7Glyph.");
+                        return List.of("&7选择此选项将停用", "&7你的字符图案。");
                     }
-                    return List.of("&7Select " + getDisplayName() + " as your Glyph!");
+                    return List.of("&7选择" + getDisplayName() + "作为你的字符图案！");
                 }
 
                 @Override
